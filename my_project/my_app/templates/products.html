@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}
+    Products    
+{% endblock title %}
+
+
+
+{% block content %}
+    <h1>Products</h1>
+
+    <ul class="list-group list-group-flush">
+        {% for product in products  %}
+        <li class="list-group-item"> {{ product.name }} : {{product.price}} : 
+            
+            {% if product.in_stock %}
+                In stock
+            {% else %}
+                Out of Stock
+            {% endif %}
+                
+
+        </li>
+        {% endfor %}
+      </ul>
+    
+        
+
+    
+{% endblock content %}
+
+    
+    
